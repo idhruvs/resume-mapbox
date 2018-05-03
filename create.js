@@ -35,7 +35,7 @@ const questions = [
   }
 ];
 
-const printAnswers = (answer) => {
+const generateHtml = (answer) => {
    // console.log(answer);
    // console.log(FILE_PATHS);
    fs.readFile(FILE_PATHS.template_url, 'utf-8', (err, html) => {
@@ -45,7 +45,7 @@ const printAnswers = (answer) => {
      }
      const updatedHtml = mustache.render(html, {firstname: answer.firstname, lastname: answer.lastname, email: answer.email, accesstoken: answer.accesstoken, city: answer.city});
      try {
-     	fs.writeFile('updated.html', updatedHtml, (err) => {
+     	fs.writeFile(FILE_PATHS.generated_url, updatedHtml, (err) => {
 	   if(err) {
 	      return err;
 	   }
@@ -67,7 +67,7 @@ program
   .description('Create Basic Resume')
   .action(() => {
 	prompt(questions).then(answers => {
-       printAnswers(answers); 
+        generateHtml(answers); 
     });
   });
 
