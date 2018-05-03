@@ -1,0 +1,15 @@
+{
+  "name": "resume-mapbox",
+  "version": "0.1.0",
+  "description": "A command line node module to create map-resume",
+  "author": "Dhruv Shah <dhruv.shah4192@gmail.com>",
+  "preferGlobal": true,
+  "bin": "./create.js",
+  "dependencies": {
+    "commander": "^2.15.1",
+    "fs": "^0.0.1-security",
+    "inquirer": "^5.2.0",
+    "mustache": "^2.3.0"
+  },
+  "license": "ISC"
+}
